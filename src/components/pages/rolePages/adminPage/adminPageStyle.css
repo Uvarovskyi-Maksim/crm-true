@@ -1,0 +1,561 @@
+.statusBlock {
+  display: flex;
+  width: 98.5%;
+}
+
+.statusCols {
+  width: 12.7%;
+  height: 100vh;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f7f3f3;
+}
+.statusCols h4{
+  font-size: 14px;
+}
+.status_name{
+
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.status_els{
+  margin-top: 40px;
+  
+}
+.statusColsElement {
+  position: relative;
+  width: 90%;
+  height: 150px;
+  font-size: 12px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #Fff;
+  border-radius: 9px;
+  white-space: nowrap;      /* Запрещаем перенос строк */
+  overflow: hidden;         /* Скрываем контент, выходящий за границы блока */
+  text-overflow: ellipsis;
+}
+
+.add_task{
+  text-align: center;
+  width: 87%;
+}
+
+.uncompleted_task {
+  background-color: yellow;
+}
+
+.cancel_block{
+  display: flex;
+  align-items: center;
+}
+
+.cancel_txt{
+  padding: 10px;
+}
+
+.cancel_checkbox{
+  margin-top: 6px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 10px; /* Уменьшен радиус для создания более компактного вида */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+
+.menu_text {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.date_name_block{
+  display: flex;
+  border-radius: 9px;
+  background-color: #E3E6EB;
+  width: max-content;
+  padding: 5px;
+  margin-top: 10px;
+}
+.client_name_block{
+  display: flex;
+  margin-top: 10px;
+  padding: 5px;
+}
+.managers_name_block {
+  display: flex;
+  width: 130px;
+  margin-top: 22px;
+  padding: 5px;
+  /* Добавляем многоточие для обрезанного контента */
+}
+
+.clock_img{
+  width: 15px;
+    height: 15px;
+    margin-right: 7px;
+    margin-top: 1px;
+}
+.statusColsElement:hover {
+  border: 2px solid #939393;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+}
+
+.left_menu {
+  width: 15%;
+  background-color: #F4F4F4;
+}
+
+.right_content {
+  width: 85%;
+}
+
+.manager_name_block {
+  position: relative;
+  background-color: #fff;
+  padding: 5px;
+  margin: 5px;
+}
+
+.name {
+  color: blue;
+}
+
+.role {
+  color: #939393;
+}
+
+.menu_block {
+  height: 100%;
+  background-color: #fff;
+  margin: 5px;
+}
+
+.menu_element {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.menu_element:hover {
+  cursor: pointer;
+  background-color: #b8b7b7;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Задаем цвет и прозрачность */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.show {
+  display: block;
+  /* Show when the VIEW is open */
+}
+
+/* Добавляем анимацию для user_modal */
+.user_modal {
+  width: 70%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ececec;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+}
+
+/* Добавляем анимацию появления для user_modal */
+.user_modal.show {
+  animation: fade-in 0.3s ease-in-out;
+  display: flex;
+}
+
+.user_modal_left_side {
+  width: 70%;
+}
+
+.user_modal_right_side {
+  width: 30%;
+}
+
+.status_block {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+}
+
+.status_block div {
+  padding: 15px;
+}
+
+.status_block div span {
+  color: #fff;
+  background-color: rgb(5, 142, 226);
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.user_modal_left_main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 81%;
+  margin-top: 20px;
+}
+
+.user_modal_left_block,
+.user_modal_right_block {
+  background-color: #fff;
+  width: 48%;
+}
+
+.content {
+  padding: 12px;
+}
+
+.content h3 {
+  text-align: center;
+}
+
+.el {
+  margin-top: 15px;
+}
+
+/* Анимация для появления */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Закрытие при клике на затемнение */
+.overlay.active {
+  display: block;
+}
+
+/* Стили для кнопки закрытия */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.notice_container {
+  margin: 0 auto;
+}
+
+.notice_block {
+  width: 95%;
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.notice_element {
+  width: 90%;
+  height: 40px;
+  font-size: 12px;
+  border: 1px solid;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.notice_date {
+  display: flex;
+  padding: 5px;
+  width: 95%;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.notice_date hr {
+  color: red;
+  background-color: #000000;
+  width: 165px;
+  height: 0.5px;
+  margin-top: 11px;
+}
+
+.notice_container h4 {
+  text-align: end;
+}
+
+.add_notice {
+  display: flex;
+  margin: 0 auto;
+  width: 88%;
+}
+
+.add_notice button {
+  background-color: rgb(5, 142, 226);
+  color: #Fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.show_clients_block {
+  position: relative;
+  display: flex;
+  margin-left: 2%;
+}
+
+.add_leed {
+  width: 120px;
+  top: 15px;
+  text-align: center;
+  /* margin-left: 89.5%; */
+  background-color: rgb(5, 142, 226);
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.search_input {
+  width: 70%;
+  height: 22px;
+  margin-top: 15px;
+}
+
+.search_btn {
+  height: 38px;
+  background-color: rgb(5, 142, 226);
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  border: 0;
+}
+
+.search_form {
+  display: flex;
+  justify-content: space-between;
+  width: 98.5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search {
+  position: relative;
+  width: 50%;
+}
+
+.clients_block {
+  width: 100%;
+}
+
+.sort_block {
+  display: flex;
+  width: 97%;
+  padding: 10px;
+  background-color: #b8b7b7;
+}
+
+.period_search {
+  width: 40%;
+}
+
+.period_inputs {
+  margin-top: 10px;
+}
+
+
+.date {
+  width: 40%;
+}
+
+.search_reset {
+  position: absolute;
+  top: 43%;
+  width: 6%;
+  left: 65%;
+  height: 20px;
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 98%;
+}
+
+tr,
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #d5d5d5;
+}
+
+tr {
+  background-color: #f2f2f2;
+}
+
+
+.btn_buyer {
+  margin: 10px;
+}
+
+.reg_table {
+  background-color: #f2f2f2;
+  border: 1px solid #dddddd;
+
+}
+
+.table_list {
+  margin-top: 40px;
+}
+
+.register {
+  border: 0;
+  background-color: rgb(5, 142, 226);
+  color: #fff;
+  padding: 10px;
+  border-radius: 9px;
+  width: 100px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn_form_block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active_el {
+  color: rgb(255, 255, 255);
+  background-color: #b8b7b7;
+}
+
+input,
+select {
+  width: 80%;
+  padding: 7px;
+  margin: 0 auto;
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.input_td div {
+
+  font-size: 14px;
+}
+
+.input_td input,
+select {
+  margin-top: 15px;
+}
+
+.react-datepicker-wrapper {
+  margin-bottom: 0;
+}
+
+.logout {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
